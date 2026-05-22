@@ -1,0 +1,53 @@
+.site-footer{
+    width: 100%;
+    background: #732257;
+    color: #d9bd8b;
+    padding: 15px 0;
+}
+
+.site-footer .content{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    gap: 0px;
+    padding: 0 40px;
+}
+
+.site-footer .logo img{
+    height: 90px;
+}
+
+.site-footer .e-mail,
+.site-footer .socials,
+.site-footer .number  {
+    font-size: 18px;
+}
+
+.site-footer .icons{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.site-footer .icons i{
+    font-size: 22px;
+    color: #d9bd8b;
+}
+
+@media (max-width: 600px) {
+    .about-text p {
+        font-size: 22px;
+    }
+
+    .news-card button {
+        font-size: 20px;
+    }
+
+    .site-footer .content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
