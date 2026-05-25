@@ -1,11 +1,21 @@
-import React from 'react';
+import './App.css';
 
-import Footer from './componentes/Footer';
+import { Outlet } from 'react-router-dom';
+
+import Menu from './components/Menu';
+
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <div>
-      <Footer />
+      <>
+        <div className="App">
+          <Menu />
+            <Outlet />
+          <Footer />
+        </div>
+      </>
     </div>
   )
 }
