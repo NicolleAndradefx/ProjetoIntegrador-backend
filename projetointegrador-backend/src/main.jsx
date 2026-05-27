@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App.jsx';
 
@@ -7,13 +8,13 @@ import Home from './routes/Home.jsx';
 
 import BolosdePote from './routes/BolosdePote.jsx';
 
-import SobreNos from './routes/SobreNos.jsx';
+import SobreNos from './routes/sobrenos/SobreNos.jsx';
 
-import CadastroUsuario from './routes/CadastroUsuario.jsx';
+import CadastroUsuario from './routes/cadastrousuario/CadastroUsuario.tsx';
 
 import CarrinhodeCompra from './routes/CarrinhodeCompra.jsx';
 
-import LoginUsuario from './routes/LoginUsuario.jsx';
+import LoginUsuario from './routes/loginusuario/LoginUsuario.tsx';
 
 import RecuperarSenhaUsuario from './routes/RecuperarSenhaUsuario.jsx';
 
