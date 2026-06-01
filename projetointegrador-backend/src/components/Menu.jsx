@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import Logo from "../assets/AteaTampa.png";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { HiOutlineUser } from "react-icons/hi2";
@@ -16,17 +17,20 @@ const Menu = () => {
  
     <header className="header">
  
-      <div className="logo">
-          <img src={Logo} alt="logo" className="logo" />
+      <div>
+        <NavLink to="/" className={({isActve}) => (isActve) ? "active" : "logo"}>
+        <img src={Logo} alt="logo" className="logo"/>
+        </NavLink>
+          
       </div>
  
       <nav className={`nav ${open ? "active" : ""}`}>
         <ul>
  
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre nós</a></li>
-          <li><a href="#">Meus Bolos</a></li>
-          <li><a href="#">Meus Pedidos</a></li>
+          <NavLink to="/" className={({isActve}) => (isActve) ? "active" : ""}>Home</NavLink> 
+          <NavLink to="/sobrenos" className={({isActve}) => (isActve) ? "active" : ""}>Sobre Nós</NavLink> 
+          <NavLink to="/bolosdepote" className={({isActve}) => (isActve) ? "active" : ""}>Meus Bolos</NavLink> 
+          <NavLink to="/meuspedidos" className={({isActve}) => (isActve) ? "active" : ""}>Meus Pedidos</NavLink>
           </ul>
       </nav>
        
@@ -40,38 +44,40 @@ const Menu = () => {
       </form>
  
       <div className="icons">
-        <a href="#" className="user">
-          <HiOutlineUser />
+        <a>
+        <NavLink to="/loginusuario" className={({isActve}) => (isActve) ? "active" : "user"}><HiOutlineUser /></NavLink>
+          
         </a>
            
-        <a href="#" className="buy">
-          <MdOutlineShoppingCart />
+        <a>
+        <NavLink to="/carrinho" className={({isActve}) => (isActve) ? "active" : "buy"}><MdOutlineShoppingCart /></NavLink>
         </a>
       </div>
      
       {/* Responsividade do Search, Menu Hamburguer */}
  
       <div className="mobile-responsive">
-          <div className="search-toggle" onClick={() => setSearchOpen(!searchOpen)}>
-    <IoIosSearch />
-        </div>
+        {!searchOpen && (
+          <div className="search-toggle" onClick={() => setSearchOpen(true)}>
+            <IoIosSearch />
+          </div>
+        )}
+       
+        {searchOpen && (
+          <form className="search-responsive open">
+            <input type="text" placeholder="Pesquisar..." />
+ 
+            <button type="submit" className="search-button">
+              <IoIosSearch />
+            </button>
+          </form>
+        )}
  
         <div className="hamburguer" onClick={() => setOpen(!open)}>
           <LuMenu />
         </div>
+ 
       </div>
- 
- 
-      {
-        searchOpen && (
-        <form className="search-responsive">
-          <input type="text" placeholder="Pesquisar..." />
- 
-          <button type="submit" className="search-button">
-            <IoIosSearch />
-          </button>
-        </form>
-      )}
  
 
     </header>

@@ -111,7 +111,10 @@ nav a:hover{
  
 @media (max-width: 768px) {
     .header {
-        position:relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0 10px;
     }
    
     .icons {
@@ -126,65 +129,10 @@ nav a:hover{
        display: none;
     }
  
-    .mobile-responsive {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-    }
- 
-    .search-toggle {
-        display: flex;
-        font-size: 24px;
-        cursor: pointer;
-    }
- 
-    .search-responsive {
-        position: absolute;
-        top: 70px;
-        left: 50%;
-        transform: translateX(-50%);
    
-        width: calc(100% - 20px);
-        max-width: 320px;
- 
-        display: flex;
-        align-items: center;
- 
-        background: #f8f8f8;
-        border-radius: 25px;
-        height: 38px;
-        overflow: hidden;
- 
-        z-index: 999;
-    }
- 
-    .search-responsive input {  
-        flex: 1;
-        min-width: 0;
-        border: none;
-        outline: none;
-        background: transparent;
-        padding: 0 12px;
-        font-size: 14px;
-    }
- 
-    .search-button{
-        background: #6D76A6;
-        flex-shrink: 0;
-        border: none;
-        width: 42px;
- 
-        display: flex;
-        align-items: center;
-        justify-content: center;
- 
-        color: white;
-        cursor: pointer;
-    }
- 
     .logo {
-        display: flex;
-        margin-left: 6px;
+        width: 55px;
+        flex-shrink: 0;
     }
  
     .hamburguer {
@@ -216,4 +164,65 @@ nav a:hover{
     align-items: center;
     gap: 20px;
   }
+ 
+  .mobile-responsive {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+ 
+    .search-toggle {
+        display: flex;
+        font-size: 24px;
+        cursor: pointer;
+    }
+ 
+    .search-responsive {
+        display: none;
+    }
+ 
+    .search-responsive.open {
+        display: flex;
+        align-items: center;
+        background: #f8f8f8;
+        border-radius: 20px;
+        height: 32px;
+        overflow: hidden;
+ 
+        flex: 1;
+        max-width: 180px;
+ 
+    }
+ 
+    .search-responsive input {  
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+   
+    .search-responsive .search-button {
+        width: 35px;
+        height: 100%;
+        color: #fff;
+        background: #6D76A6;
+        font-size: 16px;
+    }
+ 
+    .search-button{
+        background: #6D76A6;
+        flex-shrink: 0;
+        border: none;
+        width: 42px;
+ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+ 
+        color: white;
+        cursor: pointer;
+    }
 }
+ 

@@ -24,6 +24,8 @@ import BolodePoteId from './routes/BolodePoteId.jsx';
 
 import ErroRota from './routes/ErroRota.jsx';
 
+import MeusPedidos from './routes/MeusPedidos.jsx';
+
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 
 
@@ -69,6 +71,10 @@ const router = createBrowserRouter([
     {
       path: "bolosid/:id",
       element: <BolodePoteId />
+    },
+    {
+      path: "meuspedidos",
+      element: <MeusPedidos />
     }
   ]
 }

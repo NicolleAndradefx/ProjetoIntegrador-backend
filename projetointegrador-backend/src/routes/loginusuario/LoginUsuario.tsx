@@ -83,8 +83,14 @@ const LoginUsuario: React.FC = () => {
  
                                 <div className="text-center mt-2">
                                     <span className="text-muted small">Não possui uma conta? </span>
-                                    <Link to="/cadastro" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
+                                    <Link to="/cadastrousuario" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
                                         Cadastre-se aqui.
+                                    </Link>
+                                </div>
+                                <div className="text-center mt-2">
+                                    <span className="text-muted small">Deseja recuperar a senha? </span>
+                                    <Link to="/recuperarsenhausuario" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
+                                        Recuperar a senha
                                     </Link>
                                 </div>
                             </div>

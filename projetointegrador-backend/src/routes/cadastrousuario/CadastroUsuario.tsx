@@ -87,7 +87,7 @@ const CadastroUsuario: React.FC = () => {
  
                                 <div className="text-center mt-2">
                                     <span className="text-muted small">Já possui uma conta? </span>
-                                    <Link to="/login" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
+                                    <Link to="/loginusuario" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
                                         Faça login aqui.
                                     </Link>
                                 </div>

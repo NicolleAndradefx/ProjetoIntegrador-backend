@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { Link, NavLink } from 'react-router-dom';
  
 import './Footer.css';
  
@@ -10,7 +12,9 @@ const Footer = () => {
                 <div className='content'>
  
                     <div className="logofooter">
-                        <img src={AteaTampaFooter} alt="logotipo" />
+                        <NavLink to="/"> 
+                            <img src={AteaTampaFooter} alt="logotipo" />
+                        </NavLink>
                     </div>
  
                     <div className="e-mail">
