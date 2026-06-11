@@ -6,7 +6,7 @@ import App from './App.jsx';
 
 import Home from './routes/Home.jsx';
 
-import BolosdePote from './routes/BolosdePote.jsx';
+import BolosdePote from './routes/bolosdepote/BolosdePote.jsx';
 
 import SobreNos from './routes/sobrenos/SobreNos.jsx';
 
@@ -25,6 +25,14 @@ import BolodePoteId from './routes/BolodePoteId.jsx';
 import ErroRota from './routes/ErroRota.jsx';
 
 import MeusPedidos from './routes/MeusPedidos.jsx';
+
+import LoginAdm from './routes/loginadm/LoginAdm.tsx';
+
+import CadastroAdm from './routes/cadastroadm/CadastroAdm.tsx';
+
+import RecuperarSenhaAdm from './routes/recuperaradm/RecuperarSenhaAdm.jsx';
+
+import AlterarSenhaAdm from './routes/alterarsenhaadm/AlterarSenhaAdm.jsx';
 
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom';
 
@@ -75,6 +83,22 @@ const router = createBrowserRouter([
     {
       path: "meuspedidos",
       element: <MeusPedidos />
+    },
+    {
+      path: "loginadm",
+      element: <LoginAdm />
+    },
+    {
+      path: "cadastroadm",
+      element: <CadastroAdm />
+    },
+    {
+      path: 'recuperarsenhaadm',
+      element: <RecuperarSenhaAdm />
+    },
+    {
+      path: 'alterarsenhaadm',
+      element: <AlterarSenhaAdm />
     }
   ]
 }

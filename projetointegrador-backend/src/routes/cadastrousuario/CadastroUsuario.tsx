@@ -40,7 +40,7 @@ const CadastroUsuario: React.FC = () => {
             setConfirmarSenha('');
  
             // Redireciona para o login
-            setTimeout(() => navigate('/login'), 1500);
+            setTimeout(() => navigate('/loginUsuario'), 1500);
         }, 1500);
     };
  

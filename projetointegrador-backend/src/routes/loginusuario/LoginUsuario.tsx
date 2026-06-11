@@ -29,7 +29,7 @@ const LoginUsuario: React.FC = () => {
  
             // Após o sucesso, redireciona o usuário para a Dashboard do Admin
             setTimeout(() => {
-                navigate('/admin');
+                navigate('/');
             }, 1500);
         }, 1500);
     };
@@ -83,7 +83,7 @@ const LoginUsuario: React.FC = () => {
  
                                 <div className="text-center mt-2">
                                     <span className="text-muted small">Não possui uma conta? </span>
-                                    <Link to="/cadastrousuario" className="text-decoration-none fw-bold" style={{ color: '#800000' }}>
+                                    <Link to="/cadastrousuario" className="text-decoration-none fw-bold" style={{ color: '#800000 '}}>
                                         Cadastre-se aqui.
                                     </Link>
                                 </div>
