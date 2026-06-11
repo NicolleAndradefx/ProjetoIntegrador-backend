@@ -17,32 +17,45 @@ const CadastroUsuario: React.FC = () => {
     const navigate = useNavigate();
  
     const handleCadastro = (e: React.FormEvent) => {
-        e.preventDefault();
-        setErro('');
-        setSucesso('');
- 
-        if (senha !== confirmarSenha) {
-            setErro('As senhas não coincidem. Tente novamente!');
-            return;
-        }
- 
-        setLoading(true);
-        const dados = { username, email, senha };
-        console.log("Dados prontos para enviar à API do Node.js:", dados);
- 
-        setTimeout(() => {
-            setSucesso('Cadastro realizado com sucesso!');
-            setLoading(false);
-            // Limpa os campos após o sucesso
-            setUsername('');
-            setEmail('');
-            setSenha('');
-            setConfirmarSenha('');
- 
-            // Redireciona para o login
-            setTimeout(() => navigate('/loginUsuario'), 1500);
-        }, 1500);
-    };
+    e.preventDefault();
+    setErro('');
+    setSucesso('');
+
+    // ✅ Verificar se email está vazio
+    if (!email.trim()) {
+        setErro('O e-mail é obrigatório!');
+        return;
+    }
+
+    // ✅ Validar formato do email
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailValido.test(email)) {
+        setErro('Digite um e-mail válido!');
+        return;
+    }
+
+    // ✅ Verificar senha
+    if (senha !== confirmarSenha) {
+        setErro('As senhas não coincidem. Tente novamente!');
+        return;
+    }
+
+    setLoading(true);
+    const dados = { username, email, senha };
+    console.log("Dados prontos para enviar à API do Node.js:", dados);
+
+    setTimeout(() => {
+        setSucesso('Cadastro realizado com sucesso!');
+        setLoading(false);
+
+        setUsername('');
+        setEmail('');
+        setSenha('');
+        setConfirmarSenha('');
+
+        setTimeout(() => navigate('/loginUsuario'), 1500);
+    }, 1500);
+};
  
     return (
         <div className="container-fluid min-vh-100" style={{ backgroundColor: '#fdfbf7', color: '#333' }}>
