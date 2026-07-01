@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Story Script', sans-serif;
+}
+ 
+/* HERO */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 80vh;
+    background-color: #e8e6cc;
+}
+ 
+.grid-images {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    height: 100%;
+}
+ 
+.grid-images img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+/* TEXTO CENTRAL */
+.info {  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+ 
+}
+ 
+.info h1 {
+    color: #5a3e2b;
+    margin-bottom: 20px;
+}
+ 
+.info button {
+    margin: 20px 0;
+    padding: 10px 20px;
+    border: none;
+    background: #5a3e2b;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+ 
+.info button:hover {
+    background: #7e5439;
+}
+ 
+.info .whatsapp {
+    margin-top: 20px;
+    font-size: 15px;
+}
+ 
+/* INSTAGRAM */
+.instagram {
+    padding: 50px;
+    text-align: center;
+}
+ 
+.instagram h2 {
+    font-size: 28px;
+}
+ 
+.instagram span {
+    color: #732257;
+    text-decoration: underline;
+    cursor: pointer;
+}
+ 
+.insta-grid {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+ 
+.insta-grid img {
+    width: 40%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    cursor: pointer;
+}
+ 
+.insta-grid img:hover {
+    background-color: #f7f3f3;
+    border-radius: 14px;
+}
+ 
+/* responsividade */
+ 
+@media (max-width: 1024px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+ 
+    .grid-images {
+        flex-direction: row;
+    }
+ 
+    .grid-images img {
+        height: 200px;
+    }
+}
+ 
+@media (max-width: 768px) {
+ 
+    .hero {
+        grid-template-columns: 1fr;
+    }
+ 
+    .grid-images {
+        display: none;
+    }
+ 
+    .insta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ 
+    .insta-grid img {
+        width: 70%;
+        height: 120px;
+    }
+};

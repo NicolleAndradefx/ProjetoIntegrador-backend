@@ -31,14 +31,13 @@ app.use(session({
 }));
 
 //create do banco
-app.post("/cadastrousuario", (req, res) => {
-    const sql = "INSERT INTO ateatampa(id, nomeadm, email, senha, confirmarsenha, criado_em, atualizado_em) VALUES(?)";
+app.post("/cadastrousuario", async (req, res) => {
+    const sql = "INSERT INTO cadastrousuario(id, nomeusuario, email, senha, criado_em, atualizado_em) VALUES (?)";
     const valores = [
         req.body.id,
-        req.body.nomeadm,
+        req.body.nomeusuario,
         req.body.email,
         req.body.senha,
-        req.body.confirmarsenha,
         req.body.criado_em,
         req.body.atualizado_em
     ];
@@ -53,14 +52,13 @@ app.post("/cadastrousuario", (req, res) => {
     });
 });
 
-app.post("/cadastroadm", (req, res) => {
-    const sql = "INSERT INTO ateatampa(id, nomeadm, email, senha, confirmarsenha, criado_em, atualizado_em) VALUES(?)";
+app.post("/cadastroadm", async (req, res) => {
+    const sql = "INSERT INTO cadastroadm(id, nomeadm, email, senha, criado_em, atualizado_em) VALUES (?)";
     const valores = [
         req.body.id,
         req.body.nomeadm,
         req.body.email,
         req.body.senha,
-        req.body.confirmarsenha,
         req.body.criado_em,
         req.body.atualizado_em
     ];
@@ -77,7 +75,7 @@ app.post("/cadastroadm", (req, res) => {
 
 
 app.post("/loginusuario", (req, res) => {
-    const sql = "SELECT * FROM cadasrousuario WHERE email = ? AND senha = ?";
+    const sql = "SELECT * FROM cadastrousuario WHERE email = ? AND senha = ?";
     
     db.query(sql, [req.body.email, req.body.senha], (err, data) => {
         if(err) {
@@ -86,7 +84,7 @@ app.post("/loginusuario", (req, res) => {
         }
 
         if(data.length > 0){
-            req.session.username = data[0].nameusuario;
+            req.session.username = data[0].nomeusuario;
             return res.json("Login realizado com sucesso");
         } else{
             return res.json("Falha no login")
@@ -96,7 +94,7 @@ app.post("/loginusuario", (req, res) => {
 
 
 app.post("/loginadm", (req, res) => {
-    const sql = "SELECT * FROM cadasroadm WHERE email = ? AND senha = ?";
+    const sql = "SELECT * FROM cadastroadm WHERE email = ? AND senha = ?";
     
     db.query(sql, [req.body.email, req.body.senha], (err, data) => {
         if(err) {
@@ -105,7 +103,7 @@ app.post("/loginadm", (req, res) => {
         }
 
         if(data.length > 0){
-            req.session.username = data[0].nameadm;
+            req.session.username = data[0].nomeadm;
             return res.json("Login realizado com sucesso");
         } else{
             return res.json("Falha no login")

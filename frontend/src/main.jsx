@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import App from './App.jsx';
 
-import Home from './routes/Home.jsx';
+import Home from './routes/Home/Home.jsx';
 
 import BolosdePote from './routes/bolosdepote/BolosdePote.jsx';
 
@@ -20,7 +20,7 @@ import RecuperarSenhaUsuario from './routes/RecuperarSenhaUsuario.jsx';
 
 import AlterarSenhaUsuario from './routes/AlterarSenhaUsuario.jsx';
 
-import BolodePoteId from './routes/BolodePoteId.jsx';
+import BolodePoteId from './routes/ID/BolodePoteId.jsx';
 
 import ErroRota from './routes/ErroRota.jsx';
 

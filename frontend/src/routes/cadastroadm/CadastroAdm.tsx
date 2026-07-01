@@ -19,7 +19,7 @@ const CadastroAdm: React.FC = () => {
     const handleCadastro = (e: React.FormEvent) => {
     e.preventDefault();
     setErro('');
-    setSucesso('');
+    setSucesso('');    
 
     // ✅ Verificar se email está vazio
     if (!email.trim()) {
@@ -55,7 +55,7 @@ const CadastroAdm: React.FC = () => {
         setConfirmarSenha('');
 
         // Redireciona
-        setTimeout(() => navigate('/loginAdm'), 1500);
+        setTimeout(() => navigate('/loginadm'), 1500);
     }, 1500);
 };
  

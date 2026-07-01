@@ -1,3 +1,5 @@
+/* DESKTOP*/
+ 
 body {
     overflow-x: hidden;
 }
@@ -115,9 +117,10 @@ nav a:hover{
         align-items: center;
         gap: 8px;
         padding: 0 10px;
+        justify-content: space-between;
     }
    
-    .icons {
+    .icons{
         display: none;
     }
  
@@ -135,20 +138,13 @@ nav a:hover{
         flex-shrink: 0;
     }
  
-    .hamburguer {
-        display: flex;
+    .nav.active ul {
+        flex-direction: column;
         align-items: center;
         gap: 20px;
-        font-size: 28px;
-        cursor: pointer;
-        color: #000;
-   }
+    }
  
-   .hamburguer:hover {
-        transform: scale(1.1);
-   }
- 
-   .nav.active {
+    .nav.active {
         display: flex;
         justify-content: center;
         position: absolute;
@@ -157,20 +153,14 @@ nav a:hover{
         width: 100%;
         background: #F2F0E4;
         padding: 20px 0;
-  }
+    }
  
-  .nav.active ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
- 
-  .mobile-responsive {
+    .mobile-responsive {
         display: flex;
         align-items: center;
         gap: 10px;
     }
- 
+   
     .search-toggle {
         display: flex;
         font-size: 24px;
@@ -188,10 +178,8 @@ nav a:hover{
         border-radius: 20px;
         height: 32px;
         overflow: hidden;
- 
         flex: 1;
         max-width: 180px;
- 
     }
  
     .search-responsive input {  
@@ -224,5 +212,28 @@ nav a:hover{
         color: white;
         cursor: pointer;
     }
-}
+   
+    .icons-user {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
  
+        cursor: pointer;
+        color: #000;
+    }
+ 
+    .hamburguer {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #000;
+    }
+ 
+   .hamburguer:hover {
+        transform: scale(1.1);
+   }
+ 
+};

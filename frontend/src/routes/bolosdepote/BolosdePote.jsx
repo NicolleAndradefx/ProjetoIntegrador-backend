@@ -1,6 +1,6 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import "./BolosdePote.css";
- 
+
 const bolos = [
   {
     id: 1,
@@ -188,8 +188,11 @@ function BolosdePote() {
             <div className="item--price">R$ {item.preco}</div>
  
             <div className="item--name">{item.nome}</div>
+              
+            <Link to={`/bolosid/:id${item.id}`}>
+              <div className="details">Clique aqui para ver mais detalhes{item.details}</div>
+            </Link>  
  
-            <div className="details">Clique aqui para ver mais detalhes{item.details}</div>
  
           </div>
             ))}
